@@ -1,0 +1,54 @@
+# =========================
+# Python / Environment
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
+
+# =========================
+# Jupyter Notebooks
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# IDEs / Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# =========================
+# Machine Learning / PyTorch / HF
+# =========================
+# Weights and checkpoints
+*.pt
+*.pth
+*.bin
+*.ckpt
+*.safetensors
+*.h5
+*.ot
+models/
+checkpoints/
+outputs/
+adapter_model/
+
+# Logs and Tracking
+runs/
+wandb/
+tensorboard/
+
+# =========================
+# Data
+# =========================
+data/
+datasets/
+*.csv
+*.json
+*.jsonl
+*.parquet
