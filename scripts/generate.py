@@ -36,12 +36,19 @@ def main(args):
         top_p=0.9
     )
     
+  # Decode the output
     decoded_output = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-    response_start = decoded_output.find(args.prompt) + len(args.prompt)
-    clean_response = decoded_output[response_start:].strip()
     
-    print(clean_response)
+    # Extract the actual assistant response reliably
+    assistant_marker = "assistant\n"
+    if assistant_marker in decoded_output:
+        clean_response = decoded_output.split(assistant_marker)[-1].strip()
+    else:
+        # Fallback if marker is missing
+        response_start = decoded_output.find(args.prompt) + len(args.prompt)
+        clean_response = decoded_output[response_start:].strip()
+    
+    print(f"\n{clean_response}\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate text using trained LoRA adapter")
