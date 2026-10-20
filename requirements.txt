@@ -1,2 +1,7 @@
 pandas
 datasets
+transformers
+trl
+peft
+accelerate
+bitsandbytes
