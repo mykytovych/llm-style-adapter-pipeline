@@ -1,4 +1,5 @@
 import argparse
+import torch
 from datasets import load_dataset
 from unsloth import FastLanguageModel
 from unsloth.chat_templates import get_chat_template
@@ -65,8 +66,8 @@ def main(args):
             warmup_steps=5,
             max_steps=args.max_steps, # Use num_train_epochs=1 for full training
             learning_rate=2e-4,
-            fp16=not FastLanguageModel.is_bf16_supported(),
-            bf16=FastLanguageModel.is_bf16_supported(),
+            fp16=not torch.cuda.is_bf16_supported(), 
+            bf16=torch.cuda.is_bf16_supported(),
             logging_steps=1,
             optim="adamw_8bit",
             weight_decay=0.01,
