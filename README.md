@@ -71,8 +71,8 @@ Alternatively, follow the steps below to run the pipeline manually in a compatib
 ### 1. Clone the Repository
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_REPOSITORY_DIRECTORY>
+git clone https://github.com/mykytovych/llm-style-adapter-pipeline
+cd llm-style-adapter-pipeline
 ```
 
 Replace the placeholders with your repository URL and directory name.
